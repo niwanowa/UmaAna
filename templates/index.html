@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real-Time Data</title>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <style>
+        .column {
+            width: 50%;
+            box-sizing: border-box;
+            float: left;
+            word-wrap: break-word;
+        }
+    </style>
 </head>
 <body>
-    <div id="request_data"></div>
-    <div id="response_data"></div>
-    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <div class="column">
+        <h2>Request Data</h2>
+        <div id="request_data"></div>
+    </div>
+    <div class="column">
+        <h2>Response Data</h2>
+        <div id="response_data"></div>
+    </div>
     <script src="{{ url_for('static', filename='client.js') }}"></script>
 </body>
 </html>

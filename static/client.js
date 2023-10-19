@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     socket.on('request_received', function(data) {
         var requestDiv = document.getElementById('request_data');
-        requestDiv.innerHTML = 'Request Data: ' + JSON.stringify(data);
+        requestDiv.innerHTML = JSON.stringify(data, null, "\t");
     });
 
     socket.on('response_received', function(data) {
         var responseDiv = document.getElementById('response_data');
-        responseDiv.innerHTML = 'Response Data: ' + JSON.stringify(data);
+        responseDiv.innerHTML = JSON.stringify(data, null, "\t");
     });
 });
