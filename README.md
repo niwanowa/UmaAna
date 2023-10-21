@@ -8,7 +8,7 @@
 - cjconfig.jsonでの設定内に以下を記載していること。
 ```json
     "enable_notifier": true,
-	"notifier_host": "http://127.0.0.1:4693",
+    "notifier_host": "http://127.0.0.1:4693",
 ```
 
 ### cjconfig.json例
