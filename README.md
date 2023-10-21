@@ -1,5 +1,6 @@
 # UmaAna
-ウマ娘プリティーダービーのレスポンスを解析して良い感じに表示する。
+ウマ娘プリティーダービー(For Windows)のレスポンスを解析して良い感じに表示する。
+
 
 ## 前提
 - [EXNOA-CarrotJuicer](https://github.com/CNA-Bld/EXNOA-CarrotJuicer)を導入していること。
