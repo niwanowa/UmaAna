@@ -1,0 +1,3 @@
+[submodule "cjedb"]
+	path = cjedb
+	url = https://github.com/CNA-Bld/cjedb.git
