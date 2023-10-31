@@ -6,6 +6,10 @@ import struct
 app = Flask(__name__)
 socketio = SocketIO(app)
 
+# Load configuration from config.json file
+app.config.from_pyfile('config.cfg')
+print(app.config)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -42,4 +46,4 @@ def unpack_request_data(msgpack_data):
 
 
 if __name__ == '__main__':
-    socketio.run(app, host='127.0.0.1', port=4693)
+    socketio.run(app, host=app.config['HOST'], port=app.config['PORT'])
