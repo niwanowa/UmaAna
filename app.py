@@ -38,7 +38,12 @@ def notify_response():
     msgpack_data = request.data
     json_data = msgpack.unpackb(msgpack_data, raw=False)
     socketio.emit('response_received', json_data)
+    append_log(json_data)
     return 'Response Received', 200
+
+def append_log(msg):
+    if app.config['LOGGING']:
+        log.info(msg)
 
 def unpack_request_data(msgpack_data):
     # フォーマットに基づいてデータを解析
