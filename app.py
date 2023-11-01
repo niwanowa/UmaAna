@@ -2,13 +2,23 @@ from flask import Flask, request, render_template
 from flask_socketio import SocketIO
 import msgpack
 import struct
+import logging
+import datetime
 
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-# Load configuration from config.json file
+# Load configuration from config.cfg file
 app.config.from_pyfile('config.cfg')
 print(app.config)
+
+# Load logging configuration
+if app.config['LOGGING']:
+    log = logging.getLogger(__name__)
+    log.setLevel(logging.DEBUG)
+    filename = '{:%Y-%m-%d}-app-log.txt'.format(datetime.datetime.now())
+    log_handler = logging.FileHandler(app.config['LOG_FILE_PATH'] + filename, mode='a+', encoding='utf-8')
+    log.addHandler(log_handler)
 
 @app.route('/')
 def index():
